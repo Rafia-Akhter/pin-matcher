@@ -7,5 +7,13 @@ console.log(output);
 
 
 
+  const generatorPinBtn = document.getElementById("addPin");
+  generatorPinBtn.addEventListener("click" ,function(){
+     const displayRandomNumber = document.getElementById("displayRandomNumber").value;
+     const randomNumber = parseFloat(displayRandomNumber);
+     
 
- 
+
+  })
+
+
