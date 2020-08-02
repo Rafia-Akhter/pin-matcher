@@ -12,34 +12,34 @@
         <div class="row">
             <div class="col-md-6">
                 <div  class="pin-generator half-width">
-                    <input id="displayRandomNum" class="form-control" type="text">
+                    <input id="random.display" class="form-control" type="text">
                     <button id="addPin" class="generate-btn" >Generate Pin</button>
                 </div>
             </div>
             <div  class="col-md-6">
                 <div class="input-section half-width">
-                    <input id="displayNum" class="form-control" type="text">
+                    <input id="number-display" class="form-control" type="text" name="calculator" disabled>
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button"  >8</div>
-                              <div class="button">9</div>
+                              <div onclick="calculator.screen.value += '7'" class="button">7</div>
+                              <div onclick="calculator.screen.value +='8'"class="button">8</div>
+                              <div onclick="calculator.screen.value += '9'" class="button">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button" >4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                              <div onclick="calculator.screen.value +='4'" class="button" >4</div>
+                              <div onclick="calculator.screen.value  += '5'" class="button">5</div>
+                              <div  onclick=" calculator.screen.value +='6'" class="button">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                              <div onclick="calculator.screen.value +='1'" class="button">1</div>
+                              <div onclick="calculator.screen.value +='2'" class="button">2</div>
+                              <div onclick="calculator.screen.value += '3'" class="button">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"> < </div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                                <div onclick="calculator.screen.value = calculator.screen.value.slice(0,-1)" class="button"> < </div>
+                                <div onclick="calculator.screen.value +='0'" class="button">0</div>
+                                <div onclick="calculator.screen.value = ''" class="button">C</div>
                             </div>
                             <div id="submit-area">
                                 <button  type="submit" class="submit-btn">Submit</button>
@@ -49,9 +49,9 @@
                 </div>
             </div>
         </div>
-        <div id="notification" class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+        <div class="notify-section">
+            <p id = 'not-match' class="notify">❌ Pin Didn't Match, Please try again</p>
+            <p id="match" class="notify">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
