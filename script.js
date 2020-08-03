@@ -1,58 +1,55 @@
-var fourDigitRandomNum =Math.floor(1000+ Math.random()*9000);
- var output = Math.floor(fourDigitRandomNum);
-console.log(output);
+document.querySelector(".notify-section").getElementsByClassName.display = "none";
 
+document.querySelector(".generate-btm").addEventListener("click", generatePin);
 
+function generatePin(){
+   document.querySelector("form-control").value = Math.ceil(Math.random()*(9999-1000 + 1))+1000 ;
 
-  const generatorPinBtn = document.getElementById("addPin");
-  generatorPinBtn.addEventListener("click" ,function(){
-     const displayRandomNumber = document.getElementById("displayRandomNumber").value;
-     const randomNumber = parseFloat(displayRandomNumber);
-     
- })
+   document.querySelector(".form-control").style.color = "white";
 
- document.getElementById("submit").addEventListener('click',function(){ 
-    const random = document.getElementById("random.display").value;
-    const userValue = document.getElementById("number-display").value;
-    var randomNumber = 3;
-    if (random == ""){
-       document.getElementById("not-match").style.display = "block"
-       setTimeout(() => {
-          document.getElementById("not-match").style.display = "none"
-   }, 3000);
-   wrongNumber--;   
- }
- 
-
-else if (random == userValue) {
-   document.getElementById("match").style.display = 'block';
-   setTimeout(()=> {
-      document.getElementById('match').style.display = 'none';
-   }, 3000);
-   wrongNumber--;
-   
 }
 
+function inputValueTaker(x){
+      const inputAmount = document.querySelector(".inputValueShower")
+      inputAmount.value = inputAmount.value + x
+      document.querySelector(".inputValueShower").style.color = "white";
+      document.querySelector(".inputValueShower").style.textAlign ="right";
 
- else {
-   document.getElementById('not-matcher').style.display = 'block'
-   setTimeout(() =>{
-      document.getElementById('not-match').style.display = 'none'
-   }, 3000);
- }
- wrongNumber--;
-document.getElementById('number-display').value = '';
+   }
 
-if (wrongNumber <= 1) {
-   document.getElementById('wrongText').innerHTML = '1 try left'
+   function submitAction(){
+      const assignValue = document.querySelector(".inputValueShower").value;
+      const generateValue = document.querySelector(".generatedValue").value;
+
+
+    if (assignValue == generatedValue) {
+       document.querySelector(".notify-section").style.display = "block";
+       document.querySelector(".wrong").style.display = "none";
+     }
+     else {
+       document.querySelector(".notify-section").style.display = "block";
+       document.querySelector(".right").style.display = "none";
+
+
+     } 
+
+
+   }
+   document.querySelector(".inputValueShower").value = '';
+   document.querySelector(".action-left").innerText = 1+ 'try left'
+
+
+function  removalFromLast(){
+    const currentValue = document.querySelector(".inputValueShower").value;
+    const newCurrentValue = currentValue.substring(0, currentValue.length-1)
+    document.querySelector(".inputValueShower").value = newCurrentValue;
+
+
 }
+function clearAll(){
+    document.querySelector(".inputValueShower").value = null;
 
-if (wrongNumber<= 2){
-   document.getElementById('wrongText').innerHTML ='2 try left'
-}     
-
- })
-
+}
 
 
 
