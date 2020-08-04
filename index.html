@@ -12,13 +12,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div  class="pin-generator half-width">
-                    <input id="random.display" class="form-control generatedValue" type="text">
-                    <button id="addPin" class="generate-btn" >Generate Pin</button>
+                    <input class="form-control generatedValue" type="text">
+                    <button  class="generate-btn" >Generate Pin</button>
                 </div>
             </div>
             <div  class="col-md-6">
                 <div class="input-section half-width">
-                    <input id="number-display" class="form-control" type="text" name="calculator" disabled>
+                    <input id="number-display" class="form-control" type="text">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
@@ -43,18 +43,17 @@
                             </div>
                             <div id="submit-area">
                                 <button  type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <p class="action-left"><span id="tryLeft">3</span> try left</p>
                             </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="notify-section">
-            <p id = 'not-match' class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p id="match" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <p class="notify wrong">❌ Pin Didn't Match, Please try again</p>
+            <p class="notify right">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
